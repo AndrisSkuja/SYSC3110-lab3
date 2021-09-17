@@ -9,6 +9,10 @@ public class AddressBook {
         this.mylist = mylist;
     }
 
+    public AddressBook(){
+        this(new ArrayList<BuddyInfo>());
+    }
+
     public void addBuddy(BuddyInfo newBuddy){
         mylist.add(newBuddy);
     }
@@ -19,6 +23,10 @@ public class AddressBook {
 
 }
 
-    public static void main(String[] args) {
-        System.out.println("Address Book");
-    }
+public static void main(String[] args) {
+    System.out.println("Address Book");
+    AddressBook mybook = new AddressBook();
+    BuddyInfo myBuddy = new BuddyInfo("Tom", "dunno", 6);
+    mybook.addBuddy(myBuddy);
+    mybook.removeBuddy(0);
+}
