@@ -9,24 +9,29 @@ public class AddressBook {
         this.mylist = mylist;
     }
 
-    public AddressBook(){
+    public AddressBook() {
         this(new ArrayList<BuddyInfo>());
     }
 
-    public void addBuddy(BuddyInfo newBuddy){
+    public void addBuddy(BuddyInfo newBuddy) {
         mylist.add(newBuddy);
     }
 
-    public BuddyInfo removeBuddy(int index){
-        return mylist.remove(index);
+    public BuddyInfo removeBuddy(BuddyInfo oldBuddy) {
+        for(int i = 0; i < mylist.size(); i++){
+            if (mylist.get(i).equals(oldBuddy)){
+                return mylist.remove(i);
+            }
+        }
+        return null;
     }
 
-}
 
-public static void main(String[] args) {
-    System.out.println("Address Book");
-    AddressBook mybook = new AddressBook();
-    BuddyInfo myBuddy = new BuddyInfo("Tom", "dunno", 6);
-    mybook.addBuddy(myBuddy);
-    mybook.removeBuddy(0);
+    public static void main(String[] args) {
+        System.out.println("Address Book");
+        AddressBook mybook = new AddressBook();
+        BuddyInfo myBuddy = new BuddyInfo("Tom", "dunno", 6);
+        mybook.addBuddy(myBuddy);
+        mybook.removeBuddy(myBuddy);
+    }
 }
