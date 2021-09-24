@@ -29,7 +29,7 @@ public class BuddyInfo {
     }
 
 
-
+//test change
 
     public static void main(String[] args) {
         BuddyInfo test = new BuddyInfo("Homer","idk",6);
